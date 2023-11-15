@@ -88,9 +88,7 @@ with dpg.window(tag="Primary Window"):
         dpg.add_text("Word to search in database")
 
     encoding_items = ["UTF-8", "UTF-16", "UTF-32", "ISO-8859-1", "Latin-1", "Windows-1252", "ASCII"]
-    dpg.add_listbox(items=encoding_items, default_value="UTF-8", tag="encoding")
-    with dpg.tooltip(dpg.last_item()):
-        dpg.add_text("Commonly used character encoding is UTF-8")
+    dpg.add_listbox(items=encoding_items, default_value="UTF-8", tag="encoding", label="Encoding")
 
     dpg.add_button(label="Set directory", callback=lambda: dpg.show_item("file_dialog_1"), width=100)
     dpg.add_button(label="Scan", width=100, callback=scan)
